@@ -42,7 +42,7 @@ pub struct Cli {
     pub max_depth: Option<usize>,
 
     /// Output is split into parts of this size if it exceeds this limit
-    #[arg(short = 'p', long, value_name = "CHARS", default_value_t = 100_000)]
+    #[arg(short = 'p', long, value_name = "CHARS", default_value_t = 20*1024*1024)]
     pub max_part_size: u64,
 
     /// Ignore files above the specified size
@@ -50,7 +50,7 @@ pub struct Cli {
     pub max_filesize: u64,
 
     /// Show error if total size of files is over the specified size
-    #[arg(short = 's', long, value_name = "BYTES", default_value_t = 500*1024)]
+    #[arg(short = 's', long, value_name = "BYTES", default_value_t = 20*1024*1024)]
     pub max_total_size: u64,
 
     /// Don't use .gitignore files (used by default)
